@@ -1,7 +1,0 @@
-<RCC>
-    <qresource prefix="/misc">
-        <file>resource/image/background.jpeg</file>
-        <file>musicwidget/images/music.png</file>
-        <file>weatherwidget/images/weather_normal.png</file>
-    </qresource>
-</RCC>

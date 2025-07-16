@@ -2,13 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QPushButton>
 
-#include "pushbutton/mypushbutton.h"
-
-QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
-QT_END_NAMESPACE
+#include "TopWidget/topwidget.h"
+#include "CmdWidget/cmdwidget.h"
+#include "DesktopWidget/desktopwidget.h"
 
 class MainWindow : public QMainWindow
 {
@@ -22,13 +19,8 @@ public:
     ~MainWindow();
 
 private:
-    Ui::MainWindow *ui;
-
-private:
-    void initUi();
-
-    void setBackground(const QPixmap &pixmap);
-    QWidget *Page_Home();
-
+    TopWidget    *m_pTopWidget    = new TopWidget(this) ;
+    CmdWidget    *m_pCmdWidget    = new CmdWidget(this) ;
+    DesktopWidget *m_pDesktopWidget = new DesktopWidget(this);
 };
 #endif // MAINWINDOW_H

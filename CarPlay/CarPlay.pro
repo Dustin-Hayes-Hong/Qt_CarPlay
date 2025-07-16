@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui widgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -16,21 +16,26 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    CmdWidget/cmdwidget.cpp \
+    DesktopWidget/desktopwidget.cpp \
+    PushApp/pushapp.cpp \
+    TopWidget/topwidget.cpp \
     main.cpp \
-    mainwindow.cpp \
-    pushbutton/mypushbutton.cpp
+    mainwindow.cpp
 
 HEADERS += \
-    mainwindow.h \
-    pushbutton/mypushbutton.h
-
-FORMS += \
-    mainwindow.ui
+    CmdWidget/cmdwidget.h \
+    DesktopWidget/desktopwidget.h \
+    PushApp/pushapp.h \
+    TopWidget/topwidget.h \
+    mainwindow.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES +=
 
 RESOURCES += \
     resources.qrc
