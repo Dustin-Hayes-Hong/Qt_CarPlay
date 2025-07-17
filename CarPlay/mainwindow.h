@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTimer>
 
 #include "TopWidget/topwidget.h"
 #include "CmdWidget/cmdwidget.h"
@@ -17,6 +18,10 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+    void updateSysInfo();
+
+    void setBackground(const QPixmap &pixmap);
 
 private:
     TopWidget    *m_pTopWidget    = new TopWidget(this) ;

@@ -10,9 +10,10 @@ class TopWidget : public QWidget
 
 public:
     explicit TopWidget(QWidget *parent = nullptr);
+    void setSysTimeText(const QString &text);
 
 private:
-    QLabel  *m_pSysTimeLbl = new QLabel("2025-07-01 08:00:00", this);
+    QLabel *m_pSysTimeLbl;
 };
 
 #endif // TOPWIDGET_H

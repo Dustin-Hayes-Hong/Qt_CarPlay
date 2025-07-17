@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/misc">
         <file>MusicWidget/images/music.png</file>
+        <file>room.jpg</file>
     </qresource>
 </RCC>

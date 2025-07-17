@@ -6,11 +6,13 @@ PushApp::PushApp(const QString &normal_path, int pixwidth, int pixheight, QWidge
     QPixmap pix;
     if (!pix.load(normal_path)) {
         qDebug() << "图片加载失败:" << normal_path;
+        setText("Image Failed");
+        setFixedSize(pixwidth, pixheight);
+        setStyleSheet("QPushButton { background: transparent; border: none; font-size: 14px; color: red; }");
         return;
     }
-
     setFixedSize(pixwidth, pixheight);
-    setStyleSheet("QPushButton { border: 0px; }");
+    setStyleSheet("QPushButton { background: transparent; border: none; }");
     setIcon(QIcon(pix));
     setIconSize(QSize(pixwidth, pixheight));
     setFocusPolicy(Qt::NoFocus);
@@ -29,8 +31,6 @@ bool PushApp::event(QEvent *event)
 {
     if (event->type() == QEvent::MouseButtonPress) {
         zoom1(); // 触发缩放动画
-    } else if (event->type() == QEvent::MouseButtonRelease) {
-        emit clicked(); // 发出点击信号
     }
     return QPushButton::event(event);
 }

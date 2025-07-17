@@ -19,6 +19,7 @@ SOURCES += \
     CmdWidget/cmdwidget.cpp \
     DesktopWidget/desktopwidget.cpp \
     PushApp/pushapp.cpp \
+    SystemInfo/SystemInfo.cpp \
     TopWidget/topwidget.cpp \
     main.cpp \
     mainwindow.cpp
